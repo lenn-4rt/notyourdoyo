@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stadttauben Bochum e.V. – Tierschutz für Bochums Stadttauben</title>
-  <meta name="description" content="Stadttauben Bochum e.V.: ehrenamtlicher Tierschutzverein seit 2017. Notfallhilfe für Tauben, betreute Taubenhäuser nach dem Augsburger Modell und Aufklärung.">
-  <link rel="icon" href="assets/img/stadttauben-bochum-logo.png">
+  <!-- TESTPHASE: neutraler Kopf ohne SEO-Inhalte. Echte Title/Description für den Livegang stehen in der README. -->
+  <title>Vorschau</title>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" href="data:,">
+  <link rel="preload" href="assets/fonts/delicious-handrawn-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/akatab-latin-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/style.css">
-
-  <!-- TESTPHASE – vor dem Livegang beide Zeilen entfernen -->
-  <meta name="robots" content="noindex, nofollow">
   <script src="assets/js/gate.js"></script>
 </head>
 <body>
@@ -20,8 +21,8 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
-        <img src="assets/img/stadttauben-bochum-logo.png" alt="" width="52" height="52">
-        <span>Stadttauben<br><strong>Bochum e.V.</strong></span>
+        <img src="assets/img/stadttauben-bochum-logo.png" alt="" width="64" height="64">
+        <span>Stadttauben<br>Bochum <span class="brand-ev">e.V.</span></span>
       </a>
 
       <button class="nav-toggle" aria-expanded="false" aria-controls="hauptnavigation">
@@ -38,7 +39,7 @@
           <li><a href="news.html">News</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
-        <a class="btn btn-notfall" href="notfall.html">Taube gefunden?</a>
+        <a class="btn btn-notfall btn-sm" href="notfall.html">Taube gefunden?</a>
       </nav>
     </div>
   </header>
@@ -47,9 +48,14 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero">
-      <div class="container hero-inner">
+      <div class="container">
+        <div class="hero-flock" aria-hidden="true">
+          <img src="assets/img/taube-hellgrau-erschrocken-hoch.jpg" alt="" width="155" height="209">
+          <img src="assets/img/taube-grau-lila-hervorlugend-skeptisch-quer.jpg" alt="" width="165" height="136">
+          <img src="assets/img/taube-hellgrau-pickend-quer.jpg" alt="" width="223" height="144">
+          <img src="assets/img/taube-lila-winkend-hoch.jpg" alt="" width="162" height="188">
+        </div>
         <div class="hero-text">
-          <p class="eyebrow">Ehrenamtlicher Tierschutzverein seit 2017</p>
           <h1>Wir kümmern uns um Bochums Stadttauben.</h1>
           <p class="lead">
             Wir retten verletzte Tauben, betreuen Taubenschläge und setzen uns für
@@ -57,12 +63,8 @@
           </p>
           <div class="btn-row">
             <a class="btn btn-primary" href="aktiv-werden.html">Mitmachen</a>
-            <a class="btn btn-secondary" href="unterstuetzen.html">Spenden</a>
+            <a class="btn btn-outline" href="unterstuetzen.html">Spenden</a>
           </div>
-        </div>
-        <div class="hero-art">
-          <img src="assets/img/taube-lila-winkend-hoch.jpg"
-               alt="Illustration einer Taube, die mit dem Flügel winkt" width="162" height="188">
         </div>
       </div>
     </section>
@@ -71,9 +73,9 @@
     <section class="notfall" aria-labelledby="notfall-titel">
       <div class="container">
         <div class="notfall-box">
-          <img class="notfall-art" src="assets/img/taube-hellgrau-erschrocken-hoch.jpg"
-               alt="Illustration einer erschrockenen Taube mit großen Augen" width="155" height="209">
-          <div>
+          <img class="notfall-art" src="assets/img/taube-lila-brot-lustig-quadrat.jpg"
+               alt="" width="181" height="160">
+          <div class="notfall-content">
             <h2 id="notfall-titel">Taube in Not? Erst retten, dann chatten!</h2>
             <ol class="steps">
               <li>
@@ -120,8 +122,10 @@
         <h2 class="section-title">Was wir tun</h2>
         <div class="cards">
           <article class="card">
-            <img src="assets/img/taube-mauve-spazierend-zufrieden-quadrat.jpg"
-                 alt="Illustration einer zufrieden spazierenden Taube" width="179" height="188">
+            <div class="card-art">
+              <img src="assets/img/taube-grau-schlafend-rueckenlage-quer.jpg"
+                   alt="Illustration einer schlafenden Taube, die auf dem Rücken liegt" width="258" height="144">
+            </div>
             <h3>Taubenhäuser</h3>
             <p>
               In betreuten Taubenhäusern nach dem Augsburger Modell tauschen wir Eier gegen Attrappen.
@@ -131,8 +135,10 @@
             <a class="more" href="taubenhaeuser.html">Mehr zu Taubenhäusern</a>
           </article>
           <article class="card">
-            <img src="assets/img/taube-grau-schlafend-rueckenlage-quer.jpg"
-                 alt="Illustration einer schlafenden Taube, die auf dem Rücken liegt" width="258" height="144">
+            <div class="card-art">
+              <img src="assets/img/taube-grau-tuerkis-fliegend-quer.jpg"
+                   alt="Illustration einer fliegenden grauen Taube" width="260" height="192">
+            </div>
             <h3>Rettung &amp; Pflege</h3>
             <p>
               Jedes Jahr päppeln wir rund 400 verletzte, kranke oder junge Tauben aus dem ganzen
@@ -141,8 +147,10 @@
             <a class="more" href="notfall.html">Zur Notfall-Hilfe</a>
           </article>
           <article class="card">
-            <img src="assets/img/taube-weiss-brille-fliege-begruessend-quadrat.jpg"
-                 alt="Illustration einer weißen Taube mit Brille und Fliege, die einen Flügel hebt" width="232" height="241">
+            <div class="card-art">
+              <img src="assets/img/taube-weiss-brille-fliege-begruessend-quadrat.jpg"
+                   alt="Illustration einer weißen Taube mit Brille und Fliege, die einen Flügel hebt" width="232" height="241">
+            </div>
             <h3>Beratung &amp; Aufklärung</h3>
             <p>
               Wir beraten Bürger*innen, Behörden und Bauherr*innen rund um Tauben, begleiten Baumaßnahmen
@@ -156,14 +164,16 @@
 
     <!-- ============ WISSEN ============ -->
     <section class="section section-tint">
-      <div class="container split">
-        <div class="split-art">
-          <img src="assets/img/taube-grau-schillernd-aufmerksam-laufend-hoch.jpg"
-               alt="Illustration einer grauen Stadttaube mit schillerndem Hals" width="171" height="212">
-        </div>
-        <div>
+      <div class="container wissen">
+        <div class="wissen-head">
           <p class="eyebrow">Wusstest du schon?</p>
           <h2>Stadttauben sind keine Wildtiere.</h2>
+        </div>
+        <div class="wissen-art">
+          <img src="assets/img/taube-tuerkis-lila-hut-getraenk-entspannt-quadrat.jpg"
+               alt="Illustration einer Taube mit Hut, die entspannt neben einem Getränk sitzt" width="195" height="177">
+        </div>
+        <div class="wissen-text">
           <p>
             Sie stammen von Haus- und Brieftauben ab, die entflogen sind oder ausgesetzt wurden.
             Der Mensch hat sie darauf gezüchtet, sich das ganze Jahr zu vermehren: Aus einem Schwarm von
@@ -182,8 +192,11 @@
     <section class="section">
       <div class="container cards cards-2">
         <article class="card card-feature">
-          <img src="assets/img/taube-lila-kaffee-gemuetlich-hoch.jpg"
-               alt="Illustration einer lila Taube mit einer dampfenden Kaffeetasse" width="185" height="210">
+          <div class="card-art card-art-pair">
+            <img src="assets/img/taube-mauve-spazierend-zufrieden-quadrat.jpg" alt="" width="179" height="188">
+            <img src="assets/img/taube-lila-kaffee-gemuetlich-hoch.jpg"
+                 alt="Illustration zweier Tauben, eine davon mit einer dampfenden Kaffeetasse" width="185" height="210">
+          </div>
           <h2>Komm zum Taubenstammtisch</h2>
           <p>
             Ob du schon im Taubenschutz aktiv bist oder dich einfach unverbindlich informieren möchtest:
@@ -195,26 +208,28 @@
           </p>
           <div class="btn-row">
             <a class="btn btn-primary" href="aktiv-werden.html">Aktiv werden</a>
-            <a class="btn btn-secondary" href="veranstaltungen.html">Termine</a>
+            <a class="btn btn-outline" href="veranstaltungen.html">Termine</a>
           </div>
         </article>
 
         <article class="card card-feature">
-          <img src="assets/img/taube-hellgrau-verliebt-herz-hoch.jpg"
-               alt="Illustration einer zwinkernden Taube mit einem Herz über dem Kopf" width="141" height="216">
+          <div class="card-art card-art-end">
+            <img src="assets/img/taube-hellgrau-verliebt-herz-hoch.jpg"
+                 alt="Illustration einer zwinkernden Taube mit einem Herz über dem Kopf" width="141" height="216">
+          </div>
           <h2>Unterstütze unsere Arbeit</h2>
           <p>
             Futter, Tierarzt, Volieren: Unsere Arbeit kostet jeden Monat viel Geld, und wir bekommen
             dafür keine Unterstützung von der Stadt. Jede Spende hilft direkt den Tauben.
           </p>
           <dl class="bank">
-            <dt>IBAN</dt><dd>DE18 4306 0129 0403 1980 00</dd>
-            <dt>BIC</dt><dd>GENODEM1BOC</dd>
-            <dt>Bank</dt><dd>Volksbank Bochum</dd>
+            <div><dt>IBAN:</dt><dd>DE18 4306 0129 0403 1980 00</dd></div>
+            <div><dt>BIC:</dt><dd>GENODEM1BOC</dd></div>
+            <div><dt>Bank:</dt><dd>Volksbank Bochum</dd></div>
           </dl>
           <div class="btn-row">
-            <a class="btn btn-primary" href="https://www.paypal.com/paypalme/stadttaubenbochum">Per PayPal spenden</a>
-            <a class="btn btn-secondary" href="unterstuetzen.html">Weitere Möglichkeiten</a>
+            <a class="btn btn-blue" href="https://www.paypal.com/paypalme/stadttaubenbochum">Per PayPal spenden</a>
+            <a class="btn btn-outline" href="unterstuetzen.html">Weitere Möglichkeiten</a>
           </div>
         </article>
       </div>
@@ -225,12 +240,12 @@
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>
-        <p class="footer-brand">Stadttauben Bochum e.V.</p>
+      <div class="footer-address">
         <p>
-          Bergener Straße 111<br>44807 Bochum<br>
-          <small>Bitte beachte: An dieser Adresse können wir keine Tauben annehmen.</small>
+          <strong>Stadttauben Bochum e.V.</strong><br>
+          Bergener Straße 111<br>44807 Bochum
         </p>
+        <p>Bitte beachte: An dieser Adresse können wir keine Tauben annehmen.</p>
       </div>
       <div>
         <p class="footer-head">Kontakt</p>

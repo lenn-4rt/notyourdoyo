@@ -1,0 +1,3 @@
+# TESTPHASE – vor dem Livegang ersetzen
+User-agent: *
+Disallow: /
