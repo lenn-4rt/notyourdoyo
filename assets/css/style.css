@@ -112,10 +112,8 @@ a:hover { color: var(--ink); }
 }
 .skip-link:focus { top: 1rem; }
 
-/* Illustrationen: weißer Bildhintergrund verschmilzt mit farbigen Flächen */
-.hero-flock img, .notfall-art, .card-art img, .wissen-art img, .footer-art {
-  mix-blend-mode: multiply;
-}
+/* Alle Bilder: weißer Bildhintergrund verschmilzt mit der Fläche dahinter */
+img { mix-blend-mode: multiply; }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -394,4 +392,32 @@ a:hover { color: var(--ink); }
 }
 @media (max-width: 480px) {
   .footer-inner { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   Bewegung: nur der Hero-Einstieg.
+   Erst hüpfen die Tauben nacheinander herein, dann werden Headline,
+   Text und Buttons eingeblendet. Die Klasse .js-motion setzt main.js,
+   und nur wenn „Bewegung reduzieren“ aus ist.
+   ========================================================= */
+.js-motion .hero-flock img,
+.js-motion .hero-text > * { opacity: 0; }
+
+.js-motion .hero.is-visible .hero-flock img {
+  animation: hop-in .65s cubic-bezier(.3, 1.6, .5, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 130ms + 150ms);
+}
+.js-motion .hero.is-visible .hero-text > * {
+  animation: fade-up .7s cubic-bezier(.2, .7, .2, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 150ms + 850ms);
+}
+
+@keyframes hop-in {
+  0%   { opacity: 0; transform: translateY(24px); }
+  60%  { opacity: 1; transform: translateY(-6px); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
 }

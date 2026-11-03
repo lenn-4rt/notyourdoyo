@@ -122,6 +122,7 @@
         gate.remove();
         style.remove();
         root.classList.remove('gate-locked');
+        document.dispatchEvent(new Event('vorschau:freigegeben'));   // startet z. B. Animationen
       } else {
         fehler.textContent = 'Das Passwort ist leider falsch.';
         input.select();
