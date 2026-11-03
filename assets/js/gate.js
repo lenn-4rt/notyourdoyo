@@ -3,7 +3,7 @@
    Rein optischer Passwortschutz, KEIN echter Schutz: der
    Seiteninhalt bleibt im Quelltext lesbar.
 
-   - Ohne Häkchen: Freigabe gilt bis der Browser geschlossen wird.
+   - Ohne Häkchen: nichts wird gespeichert, beim Neuladen kommt das Passwort erneut.
    - Mit Häkchen „30 Tage angemeldet bleiben“: Cookie für 30 Tage.
    - Zusätzlich wird die Freigabe im Browser-Speicher abgelegt,
      weil lokal (file://) keine Cookies gespeichert werden.
@@ -11,7 +11,7 @@
    ========================================================= */
 (function () {
   var PASSWORT = 'vorschau';          // hier ändern
-  var KEY = 'vorschau_freigabe';
+  var KEY = 'vorschau_freigabe_30t';
   var TAGE = 30;                      // Dauer bei „angemeldet bleiben“
   var CREDIT_NAME = 'Lennart Niehues';
   var CREDIT_URL = 'https://len-nie.de/';
@@ -22,25 +22,20 @@
   function istFreigegeben() {
     if (document.cookie.split('; ').indexOf(KEY + '=1') !== -1) return true;
     try {
-      var s = speicher('sessionStorage');
-      if (s && s.getItem(KEY) === '1') return true;
       var l = speicher('localStorage');
       var bis = l && parseInt(l.getItem(KEY), 10);
       if (bis && bis > Date.now()) return true;
     } catch (e) {}
     return false;
   }
+  // Nur mit Häkchen wird etwas gespeichert. Ohne Häkchen gilt die Freigabe
+  // nur für die aktuell geöffnete Seite (Neuladen = erneut Passwort).
   function freigeben(merken) {
+    if (!merken) return;
     try {
-      if (merken) {
-        document.cookie = KEY + '=1; max-age=' + (TAGE * 86400) + '; path=/; SameSite=Lax';
-        var l = speicher('localStorage');
-        if (l) l.setItem(KEY, String(Date.now() + TAGE * 86400000));
-      } else {
-        document.cookie = KEY + '=1; path=/; SameSite=Lax';   // Sitzungs-Cookie
-        var s = speicher('sessionStorage');
-        if (s) s.setItem(KEY, '1');
-      }
+      document.cookie = KEY + '=1; max-age=' + (TAGE * 86400) + '; path=/; SameSite=Lax';
+      var l = speicher('localStorage');
+      if (l) l.setItem(KEY, String(Date.now() + TAGE * 86400000));
     } catch (e) {}
   }
 
